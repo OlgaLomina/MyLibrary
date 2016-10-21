@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI
 {
-    static class Library
+    public static class Library
     {
         #region Properties
         public static string Name { get; set; }
