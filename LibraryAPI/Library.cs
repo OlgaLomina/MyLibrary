@@ -13,20 +13,7 @@ namespace LibraryAPI
 
         public static string Address { get; set; }
 
-        /// <summary>
-        /// Collection of books
-        /// </summary>
-        public static List<Book> Books { get; set; }
-
         #endregion
-
-        #region Constructors
-        static Library()
-        {
-            Books = new List<Book>();
-        }
-        #endregion
-
 
         #region Methods
         public static void AddBook (Book book)
@@ -34,19 +21,23 @@ namespace LibraryAPI
             using (var model = new LibraryModel())
             {
                 model.Books.Add(book);
+                model.SaveChanges();
             }
+            
         }
 
         public static void PrintBooks()
         {
-            foreach (var book in Books)
-            {
-                Console.WriteLine("Title: {0}, ISBN: {1}, Price: {2}, Published: {3}",
-                    book.Title, book.ISBN, book.Price, book.PublishedYear);
+            using (var model = new LibraryModel())
+            { 
+                foreach (var book in model.Books)
+                {
+                    Console.WriteLine("Title: {0}, ISBN: {1}, Price: {2}, Published: {3}",
+                        book.Title, book.ISBN, book.Price, book.PublishedYear);
 
-            
+
+                }
             }
-
         }
 
         #endregion

@@ -16,6 +16,8 @@ namespace LibraryAPI
         public string LastName { get; set; }
         public string Biography { get; set; }
 
+        public virtual ICollection<Book> Books { get; set; }
+
         #endregion
     }
 }
