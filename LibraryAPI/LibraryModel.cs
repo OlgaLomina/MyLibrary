@@ -23,7 +23,10 @@ namespace LibraryAPI
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Media> Media { get; set; }
         public virtual DbSet<Author> Authors { get; set; }
-        
+        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Rental> Rentals { get; set; }
+
+
     }
 
     //public class MyEntity

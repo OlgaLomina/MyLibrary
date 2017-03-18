@@ -35,7 +35,7 @@ namespace LibraryAPI
 
         public virtual Author Author { get; set; }
 
-
+        
         #endregion
 
         #region Methods

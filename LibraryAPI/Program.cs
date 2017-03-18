@@ -74,6 +74,8 @@ namespace LibraryAPI
                         Library.AddBook(book);
                         break;
                     case 2:
+
+
                         break;
                     case 3:
                         break;
@@ -81,7 +83,7 @@ namespace LibraryAPI
                         break;
                 };
             }
-            Library.PrintBooks();
+            
         }
     }
 }
